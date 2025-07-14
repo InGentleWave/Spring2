@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>DDIT BOARD</title>
+<title>DDIT MEMBER</title>
 <%@ include file="../../skydash/headPart.jsp" %>
 </head>
 <body>
@@ -24,42 +24,40 @@
 								</div>									
 								<div class="card-body">
 								<p class="card-description">List</p>
-								<form action="/crud/board/search" method="post">
-									<input type="text" name="title" value="${board.title }" placeholder="제목으로 검색하세요."/>
-									<input type="submit"  value="검색"/>
-								</form>
 									<table class="table table-bordered">
 										<tr>
-											<td align="center" width="80">번호</td>
-											<td align="center" width="320">제목</td>
-											<td align="center" width="100">작성자</td>
+											<td align="center" width="60">번호</td>
+											<td align="center" width="80">아이디</td>
+											<td align="center" width="50">비밀번호</td>
+											<td align="center" width="50">사용자명</td>
 											<td align="center" width="180">작성일</td>
 										</tr>
 										<c:choose>
-											<c:when test="${empty boardList }">
+											<c:when test="${empty memberList }">
 												<tr>
-													<td colspan="4" align="center">조회하실 게시글이 존재하지 않습니다.</td>													
+													<td colspan="5" align="center">조회하실 회원정보가 존재하지 않습니다.</td>													
 												</tr>
 											</c:when>
 											<c:otherwise>
-												<c:forEach items="${boardList }" var="board">
+												<c:forEach items="${memberList }" var="member">
 													<tr>
-														<td align="center">${board.boardNo }</td>
+														<td align="center">${member.userNo}</td>
 														<td align="center">
-															<a href="/crud/board/read?boardNo=${board.boardNo }">
-																${board.title }
+															<a href="/crud/member/read?userNo=${member.userNo }">
+																${member.userId }
 															</a>
 														</td>
-														<td align="center">${board.writer }</td>
+														<td align="center">${member.userPw }</td>
+														<td align="center">${member.userName }</td>
 														<td align="center">
-															<fmt:formatDate value="${board.regDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>
+															<fmt:formatDate value="${member.regDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>
 														</td>
 													</tr>
 												</c:forEach>
 											</c:otherwise>
 										</c:choose>
 									</table>
-									<a href="/crud/board/register">등록</a>
+									<a href="/crud/member/register">등록</a>
 								</div>
 							</div>
 						</div>
