@@ -1,12 +1,13 @@
 package kr.or.ddit.controller.chapt08.member.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import kr.or.ddit.vo.crud.CrudMember;
 
 public interface IMemberService {
 
-	public void register(CrudMember member);
+	public void register(CrudMember member) throws IOException;
 
 	public List<CrudMember> list();
 
