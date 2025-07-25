@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Security Notice List</h1>
+	<hr/>
+	<a href="/security/notice/register">register</a> / <a href="/">home</a>
 </body>
 </html>

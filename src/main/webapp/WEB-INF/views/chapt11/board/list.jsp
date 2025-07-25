@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>Security Board List</h1>
+	<hr/>
+	<a href="/security/board/register">register</a> / <a href="/">home</a>
 </body>
 </html>

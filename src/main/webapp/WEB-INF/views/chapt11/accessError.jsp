@@ -10,5 +10,7 @@
 	<h3>Access Denied</h3>
 	<h5>SPRING SECURITY MSG : ${SPRING_SECURITY_403_EXCEPTION.message }</h5>
 	<h5>SERVER MSG : ${msg }</h5>
+	
+	<a href="/">home</a>
 </body>
 </html>
